@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>鲁虺文化网联通用户免费领取流量</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="鲁虺文化网联通用户免费领取流量 luhuiFree HTML5 Template by FreeHTML5.co" />
+	<meta name="keywords" content="鲁虺文化网联通用户免费领取流量,luhuifree html5, luhuifree template, luhuifree bootstrap, luhuihtml5, luhuicss3, luhuimobile first, luhuiresponsive" />
+	
+
+  
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="menu">
+						<li class="active"><a href="http://liantong.luhui.net" title="鲁虺文化网联通">联通</a></li>
+						<li><a href="index.html" title="鲁虺文化网流量">流量</a></li>
+						<li><a href="http://rili.luhui.net" title="鲁虺文化网日历">日历</a></li>
+						<li><a href="http://soft.luhui.net" title="鲁虺文化网软件">软件</a></li>
+						<li><a href="http://code.luhui.net" title="鲁虺文化网源码">源码</a></li>
+						
+					</ul>
+				</div>
+			</div>
+            <div class="copyrights">Collect from <a href="http://www.luhui.net"  title="鲁虺文化网">鲁虺文化网</a></div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					
+
+					<!-- Start Sign In Form -->
+					<div action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+						<h2>联通用户免费领取流量</h2>
+						<div class="form-group">
+							<label for="phones" class="sr-only">phones</label>
+							<input type="text" class="form-control" id="phones" placeholder="输入手机号码" autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="codes" class="sr-only">codes</label>
+							<input type="text" class="form-control" id="codes" placeholder="输入验证码" autocomplete="off">
+						</div>
+						
+						
+						<div class="form-group">
+							<input type="submit" id="cc" value="获取验证码" class="btn btn-primary">
+							<input type="submit" id="dd" value="领取流量" class="btn btn-primary">
+						</div>
+						
+	
+						
+					</div>
+					
+					<!-- END Sign In Form -->
+					
+
+				</div>
+			</div>
+			<div class="row" style="padding-top: 60px; clear: both;">
+				<div class="col-md-12 text-center"><p><small>Copyright&nbsp;2004-01-11&nbsp;<a href="http://www.luhui.net" title="鲁虺文化网">luhui.net</a>&nbsp;all rights reserved.</small></p></div>
+			</div>
+		</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Placeholder -->
+	<script src="js/jquery.placeholder.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+	
+	<script>
+		$('#cc').click(function(){
+			var phone = $('#phones').val();
+			$.ajax({
+				url:'https://m.10010.com/god/AirCheckMessage/sendCaptcha',
+				type:'post',
+				dataType:'json',
+				data:{
+					phoneVal:phone,
+					type:21
+				},
+				success:function(datas){
+					console.log(datas);
+                    alert('发送成功，最好间隔60s提交一次');
+				},
+				error: function (err) {
+                    console.log(err);
+					alert('发送成功，最好间隔60s提交一次');
+				},
+			})
+		});
+
+        $('#dd').click(function(){
+            var phone = $('#phones').val();
+            var code = $('#codes').val();
+            $.ajax({
+                url:'https://m.10010.com/god/qingPiCard/flowExchange',
+                data:{
+                    number:phone,
+					type:21,
+                    captcha:code
+                },
+                success:function(datas){
+					console.log(datas);
+                    alert('提交成功！');
+				},
+				error: function (err) {
+					console.log(err);
+                    alert('提交成功！');
+				},
+            });
+        });
+	</script>
+
+<!--百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度自动推送代码-->
+
+
+<!-- 网址安全插件开始 -->
+<script type="text/javascript">
+	var _svq_ = _svq_ || [];
+	_svq_.push(['set_api_key', '16adflfafads9gf28327005056b68c3d']);
+	_svq_.push(['set_noicon_class', '']); //链接前不显示任何图标，如果需要显示，请去掉这句
+	_svq_.push(['set_nopopup_class', '-sv-no-popup']); 
+	_svq_.push(['check_page']);
+	(function(){   
+		var aq = document.createElement('script');
+		aq.type = 'text/javascript'; 
+		aq.async = true;   
+		aq.charset = 'utf-8';
+		aq.src = 'http://openapi.anquan.org/static/aq.js';    
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(aq, s); 
+	})();
+</script>	
+<!-- 网址安全插件结束 --> 
+
+<div style="display:none">
+    <script src="http://s11.cnzz.com/z_stat.php?id=610720&web_id=610720" language="JavaScript"></script>
+</div>
+
+	</body>
+</html>
+
